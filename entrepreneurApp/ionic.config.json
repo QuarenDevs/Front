@@ -1,0 +1,7 @@
+{
+  "name": "entrepreneurApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
