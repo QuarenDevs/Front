@@ -1,5 +1,5 @@
 import { ApiRequestService } from './api-request.service';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Product } from '../inventory-item/product';
 
