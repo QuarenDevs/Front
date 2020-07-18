@@ -13,6 +13,10 @@ const routes: Routes = [
   },  {
     path: 'primero-lo-primero',
     loadChildren: () => import('./pages/primero-lo-primero/primero-lo-primero.module').then( m => m.PrimeroLoPrimeroPageModule)
+  },
+  {
+    path: 'cuenta-creada',
+    loadChildren: () => import('./pages/cuenta-creada/cuenta-creada.module').then( m => m.CuentaCreadaPageModule)
   }
 
 ];
