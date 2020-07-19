@@ -5,5 +5,100 @@
 </ion-header>
 
 <ion-content>
+  <div id="container">
+
+    <br>
+    <ion-title>Primero lo primero</ion-title>
+    <br>
+
+    <ion-card>
+
+      <ion-card-header>
+        <ion-card-title>¿Cuál es el nombre de tu negocio?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <div id="inputs">
+
+          <ion-input placeholder="Nombre del negocio">
+            <ion-icon name="business" size="20px"></ion-icon>
+          </ion-input>
+
+        </div>
+        <br>
+
+        <div>
+
+          <ion-select placeholder="Sección CIIU">
+            <ion-select-option>Option1</ion-select-option>
+            <ion-select-option>Option2</ion-select-option>
+            <ion-select-option>Option3</ion-select-option>
+          </ion-select>
+
+          <ion-select placeholder="División CIIU">
+            <ion-select-option>Option1</ion-select-option>
+            <ion-select-option>Option2</ion-select-option>
+            <ion-select-option>Option3</ion-select-option>
+          </ion-select>
+
+          <ion-select placeholder="Grupo CIIU">
+            <ion-select-option>Option1</ion-select-option>
+            <ion-select-option>Option2</ion-select-option>
+            <ion-select-option>Option3</ion-select-option>
+          </ion-select>
+
+          <ion-select placeholder="Clase CIIU">
+            <ion-select-option>Option1</ion-select-option>
+            <ion-select-option>Option2</ion-select-option>
+            <ion-select-option>Option3</ion-select-option>
+          </ion-select>
+
+        </div>
+
+      </ion-card-content>
+
+      <ion-card-header>
+        <ion-card-title>¿Su negocio se encuentra registrado?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-list>
+
+          <ion-radio-group>
+
+            <ion-item lines="none">
+              <ion-label>Si</ion-label>
+              <ion-radio slot="start" color="success" value="yes" mode="md"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" color="danger" value="no" mode="md"></ion-radio>
+            </ion-item>
+          
+          </ion-radio-group>
+
+        </ion-list>
+
+
+
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-card-title>Digite el NIT de su negocio</ion-card-title>
+        <br>
+        <ion-input placeholder="NIT de su negocio"><ion-icon name="business-outline"></ion-icon></ion-input>
+      </ion-card-content>
+
+    </ion-card>
+
+
+  </div>
+
+  
+
+
 
 </ion-content>
