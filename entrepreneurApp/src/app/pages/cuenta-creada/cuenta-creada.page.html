@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>CuentaCreada</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <!--<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>-->
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!--<ion-title>Standard</ion-title>-->
+    <ion-title style="text-align: center;"><ion-icon name="person-circle" style="font-size: 48px;"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div id="content">
+    <div id="message">
+      <b>¡Felicitaciones! ¡Haz <br>
+      creado tu cuenta!</b>
+    </div>
+    <ion-card id="card">
+      <i-item><p>Ahora estás conectado a cientos de emprendedores, clientes y domiciliarios. A continuación tienes dos opciones: Terminar la configuración de tu cuenta o ir directo a tu página y hacerlo después.</p></i-item>
+      <ion-button><b>Terminar Configuración</b></ion-button>
+      <u>(Recomendado)</u><br><br>
+      <ion-button>Ir a mi página</ion-button>
+    </ion-card>
+  </div>
 </ion-content>
