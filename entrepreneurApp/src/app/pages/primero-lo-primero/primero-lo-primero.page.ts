@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimeroLoPrimeroPage implements OnInit {
 
-  constructor() { }
+   isRegistered: boolean;
+   storeName: string;  
+
+  constructor() {
+
+    this.isRegistered = false;
+    this.storeName = "";
+   }
 
   ngOnInit() {
   }
-
 }

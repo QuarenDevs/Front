@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>PrimeroLoPrimero</ion-title>
+    <ion-title>Registrando tu negocio</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,14 +21,15 @@
 
         <div id="inputs">
 
-          <ion-input placeholder="Nombre del negocio">
+          <ion-input placeholder="Nombre del negocio" [(ngModel)]="storeName" [value]="true">
             <ion-icon name="business" size="20px"></ion-icon>
           </ion-input>
 
         </div>
         <br>
-
+        <h2>Su texto: {{storeName}}</h2>
         <div>
+          <h1>¿Qué vendes?</h1>
 
           <ion-select placeholder="Sección CIIU">
             <ion-select-option>Option1</ion-select-option>
@@ -66,16 +67,16 @@
 
         <ion-list>
 
-          <ion-radio-group>
+          <ion-radio-group [(ngModel)]="isRegistered">
 
             <ion-item lines="none">
               <ion-label>Si</ion-label>
-              <ion-radio slot="start" color="success" value="yes" mode="md"></ion-radio>
+              <ion-radio [value]="true" slot="start" color="success" mode="md"></ion-radio>
             </ion-item>
 
             <ion-item lines="none">
               <ion-label>No</ion-label>
-              <ion-radio slot="start" color="danger" value="no" mode="md"></ion-radio>
+              <ion-radio [value]="false" slot="start" color="danger"  mode="md" ></ion-radio>
             </ion-item>
           
           </ion-radio-group>
@@ -86,7 +87,7 @@
 
       </ion-card-content>
 
-      <ion-card-content>
+      <ion-card-content *ngIf="isRegistered">
         <ion-card-title>Digite el NIT de su negocio</ion-card-title>
         <br>
         <ion-input placeholder="NIT de su negocio"><ion-icon name="business-outline"></ion-icon></ion-input>
