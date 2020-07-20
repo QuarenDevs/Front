@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-item-sliding *ngFor="let pres of presentations; let i = index">
+    <ion-item>
+      <ion-label>
+        <h2>{{ pres.name }}</h2>
+        <p>Cosa1: {{ pres.cosa1 }}</p>
+        <p>Cosa2: {{ pres.cosa2 }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option
+      (click)="deletePresentation(i)"
+      color="danger">Delete</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>

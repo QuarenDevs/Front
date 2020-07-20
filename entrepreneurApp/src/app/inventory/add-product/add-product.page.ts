@@ -1,7 +1,9 @@
+import { Product } from './../inventory-item/product';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { InventoryService } from '../services/inventory.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -9,27 +11,36 @@ import { InventoryService } from '../services/inventory.service';
   styleUrls: ['./add-product.page.scss'],
 })
 export class AddProductPage implements OnInit {
-  name: string;
-  description: string;
-  quantity: number;
-  unitaryPrice: number;
-  sendable;
+  newProduct = {} as Product;
+  newProductForm: FormGroup;
 
   constructor(private inventoryService: InventoryService,
               private router: Router,
               private toastController: ToastController) { }
 
   ngOnInit() {
+    this.initForm();
+  }
 
+
+  initForm() {
+    this.newProductForm = new FormGroup({
+      name: new FormControl(this.newProduct.name, Validators.required),
+      description: new FormControl(this.newProduct.description, Validators.required),
+      size: new FormControl(this.newProduct.size, Validators.required),
+      UP: new FormControl(this.newProduct.unitaryPrice, Validators.required)
+    });
   }
 
   async onSendProduct(){
-    this.inventoryService.sendNewProduct({
+    /* this.inventoryService.sendNewProduct({
       name: this.name,
       size: this.quantity,
       unitaryPrice: this.unitaryPrice,
       description: this.description
-    });
+    }); */
+
+
     const toast = await this.toastController.create({
       header: 'Toast header',
       color: 'success',

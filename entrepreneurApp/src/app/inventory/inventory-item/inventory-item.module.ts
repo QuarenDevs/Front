@@ -1,3 +1,4 @@
+import { PresentationsComponent } from './../presentations/presentations.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { InventoryItemPage } from './inventory-item.page';
     IonicModule,
     InventoryItemPageRoutingModule
   ],
-  declarations: [InventoryItemPage]
+  declarations: [InventoryItemPage, PresentationsComponent]
 })
 export class InventoryItemPageModule {}

@@ -4,10 +4,10 @@
         <ion-back-button defaultHref="inventory"></ion-back-button>
       </ion-buttons>
       <ion-button slot="end" (click)="onUpdateProduct()">
-        <ion-icon name="paper-plane-outline"></ion-icon>
+        <ion-icon name="save-outline"></ion-icon>
       </ion-button>
       <ion-button slot="end" (click)="onDeleteProduct()">
-        <ion-icon name="trash"></ion-icon>
+        <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     <ion-title>{{ product.name }}</ion-title>
   </ion-toolbar>
@@ -75,5 +75,19 @@
         </div>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <h3>Presentaciones</h3>
+          <hr>
+        </ion-item>
+        <app-presentations [presentations]="presentations"></app-presentations>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary" (click)="addPresentation()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

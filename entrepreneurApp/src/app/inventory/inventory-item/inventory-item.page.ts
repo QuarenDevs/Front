@@ -11,6 +11,16 @@ import { InventoryService } from '../services/inventory.service';
 })
 export class InventoryItemPage implements OnInit {
   product: Product = {} as Product;
+  presentations = [{
+    name: 'nombre 1',
+    cosa1: 'cosas',
+    cosa2: 'cosas'
+  },
+  {
+    name: 'nombre 2',
+    cosa1: 'cosas',
+    cosa2: 'cosas'}];
+
   editables = {
     name: false,
     desc: false,
@@ -87,6 +97,13 @@ export class InventoryItemPage implements OnInit {
   onDeleteProduct(){
     this.inventoryService.deleteProduct(this.product.id);
     this.router.navigate(['/inventory']);
+  }
+
+  addPresentation(){
+    this.presentations.push({
+      name: 'nombre n',
+      cosa1: 'cosas',
+      cosa2: 'cosas'});
   }
 
 }
