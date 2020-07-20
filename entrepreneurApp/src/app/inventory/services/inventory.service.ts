@@ -20,7 +20,6 @@ export class InventoryService {
     this.inventory = responce.data.map(item => {
       return new Product(item.sid, item.name, item.size, item.unitaryPrice, item.description);
     });
-    console.log(this.inventory);
     this.onInventoryChange.next(this.inventory.slice());
   }
 
@@ -60,5 +59,9 @@ export class InventoryService {
     });
     this.onInventoryChange.next(this.inventory);
     console.log(this.inventory);
+  }
+
+  async getPresentations(){
+    
   }
 }

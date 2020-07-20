@@ -12,12 +12,12 @@ import { InventoryService } from '../services/inventory.service';
 export class InventoryItemPage implements OnInit {
   product: Product = {} as Product;
   presentations = [{
-    name: 'nombre 1',
+    name: 'nombre',
     cosa1: 'cosas',
     cosa2: 'cosas'
   },
   {
-    name: 'nombre 2',
+    name: 'nombre',
     cosa1: 'cosas',
     cosa2: 'cosas'}];
 
@@ -101,7 +101,7 @@ export class InventoryItemPage implements OnInit {
 
   addPresentation(){
     this.presentations.push({
-      name: 'nombre n',
+      name: 'nombre',
       cosa1: 'cosas',
       cosa2: 'cosas'});
   }
