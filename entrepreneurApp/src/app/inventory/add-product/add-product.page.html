@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-button slot="end" 
     (click)="onSendProduct()"
-    [disabled]="newProductForm.valid"
+    [disabled]="!newProductForm.valid"
     ><ion-icon name="exit-outline" ></ion-icon>
     </ion-button>
     <ion-title>New product</ion-title>
@@ -31,7 +31,7 @@
         </ion-item>
         <ion-item>
           <ion-textarea
-          formControlName="name"
+          formControlName="description"
           name="desc"
           placeholder="Product description"
           ></ion-textarea>
@@ -39,7 +39,7 @@
         <ion-item lines="none">
           <ion-label>Quantity:</ion-label>
           <ion-input
-          formControlName="name"
+          formControlName="size"
           name="quantity"
           placeholder="Quantity"
           type="number"
@@ -48,7 +48,7 @@
         <ion-item lines="none">
           <ion-label>Unitary price:</ion-label>
           <ion-input
-          formControlName="name"
+          formControlName="UP"
           name="UP"
           type="number"
           placeholder="Unitary price"

@@ -33,13 +33,12 @@ export class AddProductPage implements OnInit {
   }
 
   async onSendProduct(){
-    /* this.inventoryService.sendNewProduct({
-      name: this.name,
-      size: this.quantity,
-      unitaryPrice: this.unitaryPrice,
-      description: this.description
-    }); */
-
+    this.inventoryService.sendNewProduct({
+      name: this.newProductForm.value.name,
+      description: this.newProductForm.value.desccription,
+      unitaryPrice: this.newProductForm.value.UP,
+      size: this.newProductForm.value.size,
+    });
 
     const toast = await this.toastController.create({
       header: 'Toast header',

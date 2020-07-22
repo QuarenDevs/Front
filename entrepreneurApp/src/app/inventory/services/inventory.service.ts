@@ -10,6 +10,7 @@ export class InventoryService {
 
   private inventory: Product[] = [];
   serviceUrl = 'http://test2-env.eba-tvw4kr2m.us-east-1.elasticbeanstalk.com/api/v1/products/';
+  // serviceUrl = 'http://test2-env.eba-tvw4kr2m.us-east-1.elasticbeanstalk.com/api/v1/assets/';
   onInventoryChange = new Subject<Product[]>();
 
   constructor(private apiRequestService: ApiRequestService) {}
@@ -33,7 +34,6 @@ export class InventoryService {
   async sendNewProduct(product){
     const res = await this.apiRequestService.callApiPost(this.serviceUrl, product);
     const newProd = res.data;
-    console.log(newProd);
     this.inventory.push(new Product(newProd.sid, newProd.name, newProd.size, newProd.unitaryPrice, newProd.description));
     this.onInventoryChange.next(this.inventory);
   }
@@ -62,6 +62,6 @@ export class InventoryService {
   }
 
   async getPresentations(){
-    
+    return;
   }
 }
