@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
       icon: 'paper-plane'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
+      title: 'Tus Sucursales',
+      url: '../sucursales',
       icon: 'heart'
     },
     {
