@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>TyC</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <!--<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>-->
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-title>Standard</ion-title>-->
+    <ion-title style="text-align: center;"><ion-icon name="person-circle" style="font-size: 48px;"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-</ion-content>
+  <h2 id="principal">Términos y condiciones</h2>
+  <ion-card id="card">
+    <ion-title style="text-align: center;"><ion-icon name="newspaper-outline" id="icon"></ion-icon></ion-title>
+    <p id="cardtxt">Lee <u><a>aquí</a></u> nuestros términos y condiciones</p>
+    <center><ion-button>Terminar con el registro</ion-button></center>
+    <p id="disclaimer">(Al terminar con el registro, estarás aceptando los términos y condiciones)</p>
+  </ion-card>
+  </ion-content>
