@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'ty-c',
     loadChildren: () => import('./pages/ty-c/ty-c.module').then( m => m.TyCPageModule)
+  },
+  {
+    path: 'cuentanos-sobre-ti',
+    loadChildren: () => import('./pages/cuentanos-sobre-ti/cuentanos-sobre-ti.module').then( m => m.CuentanosSobreTiPageModule)
   }
 
 ];
