@@ -1,9 +1,99 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cuentanos sobre ti</ion-title>
+    <ion-title>Cuéntanos sobre ti</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div id="container">
+    <br>
+    <ion-title>Cuéntanos más sobre ti!</ion-title>
+    <br>
+    <ion-card>
 
+      <ion-card-header>
+        <ion-card-title>Describe tu negocio</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        
+        
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item><ion-textarea placeholder="Aquí puedes describir tu negocio"></ion-textarea></ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-card-title>¿Qué día se fundó tu negocio?</ion-card-title>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Día</ion-label>
+                <ion-datetime displayFormat="D"></ion-datetime>
+              </ion-item>
+            </ion-col>
+
+            <ion-col>
+              <ion-item>
+                <ion-label>Mes</ion-label>
+                <ion-datetime displayFormat="MMMM"></ion-datetime>
+              </ion-item>
+
+            </ion-col>
+
+            <ion-col>
+              <ion-item>
+                <ion-label>Año</ion-label>
+                <ion-datetime displayFormat="YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+
+            <ion-col>
+              <ion-item>
+                <ion-label>Seleccione</ion-label>
+                <ion-datetime placeholder="Día/Mes/Año" displayFormat="D,MMMM,YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-card-title>¿Cuál es el logo de tu empresa?</ion-card-title>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              
+              <ion-input type="file"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button>Continuemos</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+  
+      </ion-card-content>
+  
+    </ion-card>
+
+
+  </div>
+  
+  
 </ion-content>
