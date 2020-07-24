@@ -1,9 +1,48 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>datos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <!--<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>-->
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-title>Standard</ion-title>-->
+    <ion-title style="text-align: center;"><ion-icon name="person-circle" style="font-size: 48px;"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2 id="principal">Datos de contacto</h2>
+  <ion-card>
+    <ion-item id="nombres">
+      <ion-input slot="start" type="text" placeholder="Nombres"></ion-input>
+      <ion-input type="text" placeholder="Apellidos"></ion-input>
+    </ion-item>
 
+    <ion-item id="correo">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-input type="email" placeholder="Correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start"name="key-outline"></ion-icon>
+      <ion-input type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-input type="tel" placeholder="Teléfono fijo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="phone-portrait-outline"></ion-icon>
+      <ion-input type="tel" placeholder="Teléfono Celular"></ion-input>
+    </ion-item>
+    <br>
+    <center><ion-button>Continuemos >>></ion-button></center>
+    <br>
+  </ion-card>
 </ion-content>
