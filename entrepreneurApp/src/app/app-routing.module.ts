@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'redes-sociales',
     loadChildren: () => import('./pages/redes-sociales/redes-sociales.module').then( m => m.RedesSocialesPageModule)
+  },
+  {
+    path: 'ty-c',
+    loadChildren: () => import('./pages/ty-c/ty-c.module').then( m => m.TyCPageModule)
   }
 
 ];
