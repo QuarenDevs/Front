@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'cuentanos-sobre-ti',
     loadChildren: () => import('./pages/cuentanos-sobre-ti/cuentanos-sobre-ti.module').then( m => m.CuentanosSobreTiPageModule)
+  },
+  {
+    path: 'datos',
+    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
   }
 
 ];
