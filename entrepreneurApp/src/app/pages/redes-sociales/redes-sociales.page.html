@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Redes-Sociales</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <!--<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>-->
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-title>Standard</ion-title>-->
+    <ion-title style="text-align: center;"><ion-icon name="person-circle" style="font-size: 48px;"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2 id="principal">¿Dónde más te encuentras?</h2>
 
+  <ion-card id="card">
+    <p id="txtCard">¿Tienes redes sociales? ¡Ayuda a tus clientes a encontrarte fácilmente!</p>
+    <ion-item id="facebook">
+      <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      <ion-input type="text" placeholder="Tu página de Facebook"></ion-input>
+    </ion-item>
+    <ion-item id="instagram">
+      <ion-icon slot="start" name="logo-instagram"></ion-icon>
+      <ion-input type="text" placeholder="Tu user de Instagram"></ion-input>
+    </ion-item>
+    <ion-item id="webpg">
+      <ion-icon slot="start" name="globe-outline"></ion-icon>
+      <ion-input type="text" placeholder="Tu página web"></ion-input>
+    </ion-item>
+    <ion-item id="youtube">
+      <ion-icon slot="start" name="logo-youtube"></ion-icon>
+      <ion-input type="text" placeholder="Tu canal de YouTube"></ion-input>
+    </ion-item>
+    <ion-item id="tiktok">
+      <ion-icon  slot="start" name="logo-tiktok"></ion-icon>
+      <ion-input type="text" placeholder="Tu público de TikTok"></ion-input>
+    </ion-item>
+    <br>
+    <center><ion-button>Continuemos >>></ion-button></center>
+  </ion-card>
 </ion-content>
