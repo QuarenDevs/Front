@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'cuenta-creada',
     loadChildren: () => import('./pages/cuenta-creada/cuenta-creada.module').then( m => m.CuentaCreadaPageModule)
+  },
+  {
+    path: 'redes-sociales',
+    loadChildren: () => import('./pages/redes-sociales/redes-sociales.module').then( m => m.RedesSocialesPageModule)
   }
 
 ];
