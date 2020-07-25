@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'datos',
     loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
+  },
+  {
+    path: 'tus-sucursales',
+    loadChildren: () => import('./pages/tus-sucursales/tus-sucursales.module').then( m => m.TusSucursalesPageModule)
   }
 
 ];
