@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>queconfigurar</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <!--<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>-->
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!--<ion-title>Standard</ion-title>-->
+    <ion-title style="text-align: center;"><ion-icon name="person-circle" style="font-size: 48px;"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <center><ion-icon name="cog-outline" id="icon"></ion-icon></center>
+  <h2 id="principal">¿Qué quieres configurar?</h2>
+  <ion-card id="card">
+    <ion-button><b>Sucursales</b></ion-button><br>
+    <ion-button><b>Integrantes</b></ion-button><br>
+    <ion-button><b>Display Visual</b></ion-button><br>
+    <hr>
+    <ion-button>Ir a mi página principal</ion-button>
+  </ion-card>
 </ion-content>
