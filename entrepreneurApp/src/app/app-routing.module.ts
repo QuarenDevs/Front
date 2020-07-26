@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'tus-sucursales',
     loadChildren: () => import('./pages/tus-sucursales/tus-sucursales.module').then( m => m.TusSucursalesPageModule)
+  },
+  {
+    path: 'queconfigurar',
+    loadChildren: () => import('./pages/queconfigurar/queconfigurar.module').then( m => m.QueconfigurarPageModule)
   }
 
 ];
