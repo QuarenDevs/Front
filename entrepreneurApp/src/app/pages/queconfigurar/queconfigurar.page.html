@@ -16,8 +16,10 @@
 </ion-header>
 
 <ion-content>
-  <center><ion-icon name="cog-outline" id="icon"></ion-icon></center>
-  <h2 id="principal">¿Qué quieres configurar?</h2>
+  <div id="div">
+    <ion-icon name="cog-outline" id="icon"></ion-icon>
+    <h2 id="principal">¿Qué quieres configurar?</h2>
+  </div>
   <ion-card id="card">
     <ion-button [routerLink]="['/tus-sucursales']"><b>Sucursales</b></ion-button><br>
     <ion-button><b>Integrantes</b></ion-button><br>
