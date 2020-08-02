@@ -8,12 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PrimeroLoPrimeroPage implements OnInit {
 
    isRegistered: boolean;
-   storeName: string;  
+ 
 
   constructor() {
 
     this.isRegistered = false;
-    this.storeName = "";
    }
 
   ngOnInit() {
