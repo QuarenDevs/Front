@@ -1,3 +1,4 @@
+import { OrderListPageRoutingModule } from './order-list-routing.module';
 import { OrderService } from '../../services/order.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,6 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    OrderListPageRoutingModule,
     RouterModule.forChild(routes)
   ],
   declarations: [OrderListPage]
