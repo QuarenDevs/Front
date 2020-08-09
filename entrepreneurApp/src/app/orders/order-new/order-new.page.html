@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+          Nueva orden de compra
+        </ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding">
+  <p>
+    Crear una nueva orden de compra
+  </p>
+  
+  <ion-item>
+      <ion-label position="floating">Cliente</ion-label>
+      <ion-select ok-text="Seleccionar" cancel-text="Cancelar" [(ngModel)]="customer">
+        <ion-select-option *ngFor="let c of customers" [value]="c">{{c.name}}</ion-select-option>
+      </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Fecha planeada de entrega:</ion-label>
+    <ion-datetime [(ngModel)]="planned_delivery_date"  min="{{fechaMinima}}" max="3000"
+      dayShortNames="Lun, Mar, Mié, Jue, Vie, Sáb, Dom"
+      displayFormat="DDD DD-MMM-YY HH:mm"
+      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dec"></ion-datetime>
+  </ion-item>
+  <ion-item>
+      <p>Total: $ {{presentationsForm.getTotalPrice() | number }}</p>
+  </ion-item>
+  <app-presentation-form #presentationsForm limitMaximumWithAvailable="true">
+  </app-presentation-form>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title><ion-icon name="chatbubbles" class="address"></ion-icon> Comentarios</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <h2><b>Públicos</b></h2>
+          <p>
+              <ion-item>
+                  <ion-textarea [(ngModel)]="public_comments" rows="6" cols="20" placeholder="Agregar comentarios..."></ion-textarea>
+                </ion-item>
+          </p>
+          <h2><b>Privados</b></h2>
+          <p>
+            <ion-item>
+                <ion-textarea [(ngModel)]="private_comments" rows="6" cols="20" placeholder="Agregar comentarios..."></ion-textarea>
+              </ion-item>
+          </p>
+            
+      </ion-card-content>
+    </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="success" (click)="crearOrden()">
+          <ion-icon name="cart"></ion-icon>
+          Facturar
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="danger" routerLink='/' routerDirection="back">
+          <ion-icon name="close-circle"></ion-icon>
+          Cancelar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

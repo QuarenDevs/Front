@@ -28,9 +28,9 @@ export class AppComponent implements OnInit {
       icon: 'heart'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Orders',
+      url: '/order-list',
+      icon: 'cart'
     },
     {
       title: 'Trash',
