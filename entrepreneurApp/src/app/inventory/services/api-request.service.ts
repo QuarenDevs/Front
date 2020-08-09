@@ -10,19 +10,17 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class ApiRequestService {
-
-  // tslint:disable-next-line: variable-name
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   async callApiPost(serviceURL, requestData) {
-    const serviceRequestPromise = this._httpClient
+    const serviceRequestPromise = this.httpClient
       .post(serviceURL, JSON.stringify(requestData), httpOptions)
       .toPromise();
     const rawSrvResp: any = await serviceRequestPromise;
     return rawSrvResp;
   }
   async callApiPut(serviceURL, requestData) {
-    const serviceRequestPromise = this._httpClient
+    const serviceRequestPromise = this.httpClient
       .put(serviceURL, JSON.stringify(requestData), httpOptions)
       .toPromise();
     const rawSrvResp: any = await serviceRequestPromise;
@@ -30,17 +28,14 @@ export class ApiRequestService {
   }
 
   async callApiGet(serviceURL) {
-    const serviceRequestPromise = this._httpClient
-      .get(serviceURL)
-      .toPromise();
+    const serviceRequestPromise = this.httpClient.get(serviceURL).toPromise();
     const rawSrvResp: any = await serviceRequestPromise;
     return rawSrvResp;
   }
 
   async callApiDelete(serviceURL) {
-    const serviceRequestPromise = this._httpClient
+    const serviceRequestPromise = this.httpClient
       .delete(serviceURL)
       .toPromise();
   }
-
 }
