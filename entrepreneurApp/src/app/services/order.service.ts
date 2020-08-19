@@ -1,3 +1,4 @@
+import { ApiRequestService } from './api-request.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,27 @@ import { Injectable } from '@angular/core';
 })
 export class OrderService {
 
-  constructor() { }
+  url = 'http://test2-env.eba-tvw4kr2m.us-east-1.elasticbeanstalk.com/api/v1.0/purchase_orders/';
+
+  constructor(private api: ApiRequestService) { }
+
+  async getOrders() {
+    return await this.api.callApiGet(this.url);
+  }
+
+  downloadReceipt(order) {
+
+  }
+
+  marcarComoEntregado(order) {
+
+  }
+
+  enviarOrden(uuid, pedido, publicComments, privateComments) {
+
+  }
+
+  async getOrderInfo(idOrder) {
+    return await this.api.callApiGet(this.url + idOrder);
+  }
 }

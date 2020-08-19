@@ -1,5 +1,6 @@
+import { Order } from './../components/order.model';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { OrderService } from '../../services/order.service';
 
 @Component({
@@ -8,62 +9,44 @@ import { OrderService } from '../../services/order.service';
   styleUrls: ['./order-list.page.scss'],
 })
 export class OrderListPage implements OnInit {
-
-
-  orders: any;
-  originalOrders: any;
+  orders = [];
   
   constructor(
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService, 
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit()
   {
-    
+    this.getOrders();
   }
+  
   ionViewDidEnter()
   {
-    /* this.orderService.getOrders().then(data =>
-      {
-        this.orders = data;
-        this.originalOrders = data;
-      }
-    ); */
+
+  }
+
+  async getOrders(){
+    this.orders = (await this.orderService.getOrders());
+    console.log('this.orders')
+    console.log(this.orders)
   }
   
   downloadReceipt(order)
   {
-    // this.orderService.downloadReceipt(order)
+    this.orderService.downloadReceipt(order)
   }
 
   viewDetails(order)
   {
-    // this.router.navigate(['/order-details', {order: order.uuid}]);
+    this.router.navigate(['order-details', order.sid], {relativeTo: this.route});
   }
 
-  filterData()
-  {
-    /*   if(this.orders.length == this.originalOrders.length)
-      {
-          this.orders = this.orders.filter((order)=>{
-            return order.customer.name.includes("ba");
-          });
-      }
-      else
-      {
-        this.orders = JSON.parse(JSON.stringify(this.originalOrders));
-      } */
-  }
 
   marcarComoEntregado(order)
   {
-    /* this.orderService.marcarComoEntregado(order).then(data => {
-      this.orderService.getOrders().then(dataR => {
-        this.originalOrders = dataR;
-        this.orders = this.originalOrders;
-      })
-    }); */
+    this.orderService.marcarComoEntregado(order) 
   }
 
   

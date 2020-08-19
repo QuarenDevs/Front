@@ -12,31 +12,31 @@
 <ion-content class="ion-padding" *ngIf="currentOrder != undefined">
 
   <ion-card>
-    <ion-img src="{{ currentOrder.customer.image || 'assets/images/default/store.png' }}"></ion-img>
+    <ion-img src="https://cdn.pixabay.com/photo/2019/07/13/13/42/watch-4334815_960_720.jpg"></ion-img>
     <ion-card-header (click)="viewWholesalerDetails(currentOrder.customer)">
-      <ion-card-title>N°  - {{currentOrder.customer.name}}</ion-card-title>
+      <ion-card-title>N°  </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>
-        <ion-icon name="pin" class="address"></ion-icon> {{currentOrder.customer.address}}
+        <ion-icon name="pin" class="address"></ion-icon> 
       </p>
       
       <p>
-        <ion-icon name="phone-portrait" class="phone"></ion-icon><a href="tel:{{currentOrder.customer.cellphone}}">{{currentOrder.customer.cellphone}}</a>
+        <ion-icon name="phone-portrait" class="phone"></ion-icon><a href="tel:"></a>
       </p>
       <p>
-        <ion-icon name="call" class="phone"></ion-icon><a href="tel:{{currentOrder.customer.phone}}">{{currentOrder.customer.phone}}</a>
+        <ion-icon name="call" class="phone"></ion-icon><a href="tel:"></a>
       </p>
       
       <br>
       <p>
-        <ion-icon name="calendar" class="calendar"></ion-icon> {{currentOrder.created_at | date}}
+        <ion-icon name="calendar" class="calendar"></ion-icon>
       </p>
       <p>
-        <ion-icon name="car" class="delivery_date"></ion-icon> {{currentOrder.delivery_date | date}}
+        <ion-icon name="car" class="delivery_date"></ion-icon> 
       </p>
       <p>
-        <ion-icon name="cash" class="cash"></ion-icon> $ {{currentOrder.total_wholesale_price | number }}
+        <ion-icon name="cash" class="cash"></ion-icon>
       </p>
     </ion-card-content>
   </ion-card>
@@ -48,11 +48,9 @@
       <ion-card-content>
           <h2><b>Públicos</b></h2>
           <p>
-            {{currentOrder.public_comments}}
           </p>
           <h2><b>Privados</b></h2>
           <p>
-            {{currentOrder.private_comments}}
           </p>
             
       </ion-card-content>
@@ -67,15 +65,15 @@
   <ion-list>
       <ion-item *ngFor="let item of currentOrder.order_items">
         <ion-thumbnail item-left>
-          <img src="assets/images/products/{{ item.presentation.image  || 'honey.png'}}">
+          <img src="">
         </ion-thumbnail>
         <ion-label>
-          <h2 class="item-text-wrap"><b>{{ item.presentation.short_name}} ({{ item.presentation.measurement}})</b></h2>
+          <h2 class="item-text-wrap"><b>()</b></h2>
           <p><b>Cantidad:</b> {{item.quantity}}</p>
-          <p><b>Valor unitario:</b> $ {{item.presentation.wholesale_price | number }}</p>
-          <p *ngIf="item.discount.uuid != '80863b44-9f07-4d4e-b1f5-64053052e5c7'"><b>Descuento:</b> {{ item.discount.discount_percentage }}% </p>
+          <p><b>Valor unitario:</b> $ </p>
+          <p *ngIf="item.discount.uuid != '80863b44-9f07-4d4e-b1f5-64053052e5c7'"><b>Descuento:</b>% </p>
           
-          <p><b>Subtotal:</b> $ {{ item.quantity * item.presentation.wholesale_price * ((100-item.discount.discount_percentage)/100) | number }}</p>
+          <p><b>Subtotal:</b> $</p>
         </ion-label>
       </ion-item>
     </ion-list>

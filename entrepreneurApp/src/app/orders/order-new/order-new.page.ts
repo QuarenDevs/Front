@@ -1,4 +1,6 @@
+import { PresentationFormComponent } from './../components/presentation-form/presentation-form.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
 import { Plugins } from '@capacitor/core';
 
@@ -10,6 +12,8 @@ const { Modals } = Plugins;
   styleUrls: ['./order-new.page.scss'],
 })
 export class OrderNewPage implements OnInit {
+
+  @ViewChild(PresentationFormComponent, {static: false}) presentationsForm: PresentationFormComponent;
 
   endPoint:string = "orders";
   
@@ -30,11 +34,11 @@ export class OrderNewPage implements OnInit {
   creacionDeOrdenSolicitada: boolean;
 
   
-  constructor()
-  {}
+  constructor(
+    public orderService: OrderService,
+    private router: Router){}
 
   ngOnInit() {
-    this.getCustomers();
     this.creacionDeOrdenSolicitada = false;
   }
 
@@ -42,35 +46,15 @@ export class OrderNewPage implements OnInit {
   {
     this.fechaMinima = new Date().toISOString();
   }
-
-  async getCustomers() {
-    /* this.customerService.getWholesalers().then(data =>
-      {
-        this.customers = data;
-      }
-    ); */
-  }
-
   
   async enviarOrden(pedido) {
     
-    /* this.orderService.enviarOrden(this.customer.uuid, pedido, this.public_comments, this.public_comments).then(data =>
-      {
-        this.creacionDeOrdenSolicitada = false;
-        this.router.navigate(['/order-list']);
-      }
-    ); */
+    this.orderService.enviarOrden(this.customer.uuid, pedido, this.public_comments, this.public_comments);
  }
   async crearOrden()
   {
-    /* var esValido = true;
+    var esValido = true;
     var errores = [];
-
-    if(this.customer == undefined)
-    {
-      errores.push('Debe seleccionar un cliente');
-      esValido = false;
-    }
 
     let itemsPedidos = this.presentationsForm.getPresentationRequest();
 
@@ -128,7 +112,7 @@ export class OrderNewPage implements OnInit {
         title: 'Error',
         message: error
       });
-    }*/
-  } 
+    }
+  }
 
 }
