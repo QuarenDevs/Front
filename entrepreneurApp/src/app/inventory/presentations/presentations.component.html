@@ -1,16 +1,32 @@
-<ion-list>
-  <ion-item-sliding *ngFor="let pres of presentations; let i = index">
-    <ion-item>
-      <ion-label>
-        <h2>{{ pres.name + ' ' + (i+1) }}</h2>
-        <p>Cosa1: {{ pres.cosa1 }} </p>
-        <p>Cosa2: {{ pres.cosa2 }}</p>
-      </ion-label>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option
-      (click)="deletePresentation(i)"
-      color="danger">Delete</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
+<ion-card>
+  <ion-list>
+    <ion-item-sliding *ngFor="let pres of presentations; let i = index">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="pres.image"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ pres.formal_name}}</h2>
+          <p>description: {{ pres.description }} </p>
+          <p>Cantidad: {{ pres.measurement_quantity + pres.measurement_unit }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="deletePresentation(i)" color="danger">Delete</ion-item-option>
+        <ion-item-option (click)="editItem(i)" color="primary">Edit</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-card>
+<ion-grid *ngIf="presentation">
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <h3>{{presentation.formal_name}}</h3>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-item lines="none">
+    <app-presentation-description [presentation]="presentation"></app-presentation-description>
+  </ion-item>
+</ion-grid>

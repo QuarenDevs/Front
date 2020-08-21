@@ -10,12 +10,14 @@ const routes: Routes = [
   },
   {
     path: 'product/:id',
-    loadChildren: () => import('./inventory-item/inventory-item.module').then( m => m.InventoryItemPageModule)
+    loadChildren: () => import(
+      './inventory-item/inventory-item.module').then( m => m.InventoryItemPageModule)
   },
   {
     path: 'add-product',
-    loadChildren: () => import('./add-product/add-product.module').then( m => m.AddProductPageModule)
-  }
+    loadChildren: () => import(
+      './add-product/add-product.module').then( m => m.AddProductPageModule)
+  },
 ];
 
 @NgModule({

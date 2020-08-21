@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-presentations',
@@ -8,13 +9,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PresentationsComponent implements OnInit {
 
   @Input() presentations;
+  presentation;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  deletePresentation(index: number){
+  deletePresentation(index: number) {
     this.presentations.splice(index, 1);
+  }
+
+  editItem(index) {
+    this.presentation = this.presentations[index];
   }
 
 }

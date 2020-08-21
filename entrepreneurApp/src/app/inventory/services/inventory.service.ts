@@ -8,37 +8,37 @@ import { Product } from '../inventory-item/product';
 })
 export class InventoryService {
   private inventory: Product[] = [];
-  // serviceUrl ='http://test2-env.eba-tvw4kr2m.us-east-1.elasticbeanstalk.com/api-docs/v1.0/';
-  serviceUrl =
-    'http://test2-env.eba-tvw4kr2m.us-east-1.elasticbeanstalk.com/api/v1.0/assets';
+  serviceUrl = 'http://test2-env.eba-tvw4kr2m.us-east-1.elasticbeanstalk.com/api/v1.0/products/';
   onInventoryChange = new Subject<Product[]>();
 
-  constructor(private apiRequestService: ApiRequestService) {}
+  constructor(private apiRequestService: ApiRequestService) { }
 
   async getInventory() {
     this.inventory = [];
     const responce = await this.apiRequestService.callApiGet(this.serviceUrl);
-    this.inventory = responce.data.map((item) => {
+    this.inventory = responce.map((item) => {
       return new Product(
         item.sid,
         item.name,
         item.size,
         item.unitaryPrice,
-        item.description
+        item.description,
+        item.presentations,
       );
     });
     this.onInventoryChange.next(this.inventory.slice());
   }
 
   async getItem(id: string) {
-    const res = await this.apiRequestService.callApiGet(this.serviceUrl + id);
-    const item = res.data;
+    const item = await this.apiRequestService.callApiGet(this.serviceUrl + id);
+    console.log(item);
     return new Product(
       item.sid,
       item.name,
       item.size,
       item.unitaryPrice,
-      item.description
+      item.description,
+      item.presentations,
     );
   }
 
@@ -54,7 +54,8 @@ export class InventoryService {
         newProd.name,
         newProd.size,
         newProd.unitaryPrice,
-        newProd.description
+        newProd.description,
+        []
       )
     );
     this.onInventoryChange.next(this.inventory);
@@ -73,13 +74,14 @@ export class InventoryService {
       this.serviceUrl + id,
       product
     );
-    const p = res.data;
+    const p = res;
     const newProd = new Product(
       p.sid,
       p.name,
       p.size,
       p.unitaryPrice,
-      p.description
+      p.description,
+      []
     );
     this.inventory = this.inventory.map((prod) => {
       if (prod.id === id) {

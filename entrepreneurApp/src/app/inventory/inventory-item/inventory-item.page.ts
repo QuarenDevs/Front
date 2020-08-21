@@ -11,15 +11,7 @@ import { InventoryService } from '../services/inventory.service';
 })
 export class InventoryItemPage implements OnInit {
   product: Product = {} as Product;
-  presentations = [{
-    name: 'nombre',
-    cosa1: 'cosas',
-    cosa2: 'cosas'
-  },
-  {
-    name: 'nombre',
-    cosa1: 'cosas',
-    cosa2: 'cosas'}];
+  presentations = this.product.presentations;
 
   editables = {
     name: false,
@@ -27,13 +19,13 @@ export class InventoryItemPage implements OnInit {
     quantity: false,
     UP: false,
     getElement: (s) => {
-      if (s === 'name'){
+      if (s === 'name') {
         this.editables.name = true;
-      } else if (s === 'desc'){
+      } else if (s === 'desc') {
         this.editables.desc = true;
-      }  else if (s === 'quantity'){
+      } else if (s === 'quantity') {
         this.editables.quantity = true;
-      }  else if (s === 'UP'){
+      } else if (s === 'UP') {
         this.editables.UP = true;
       }
       return;
@@ -46,7 +38,7 @@ export class InventoryItemPage implements OnInit {
     private route: ActivatedRoute,
     private toastController: ToastController,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap) => {
@@ -57,9 +49,9 @@ export class InventoryItemPage implements OnInit {
       this.getProduct(id);
     });
   }
-  async getProduct(id){
+  async getProduct(id) {
     this.product = await this.inventoryService.getItem(id);
-    if (!this.product?.name){
+    if (!this.product?.name) {
       this.router.navigate(['/inventory']);
     }
   }
@@ -68,42 +60,44 @@ export class InventoryItemPage implements OnInit {
     this.editables.getElement(edit);
   }
 
-  blur(){
+  blur() {
     this.editables.name = false;
     this.editables.desc = false;
     this.editables.quantity = false;
     this.editables.UP = false;
   }
 
-  async onUpdateProduct(){
+  async onUpdateProduct() {
     this.inventoryService.updateProduct(this.product.id, {
-        name: this.product.name,
-        size: this.product.size,
-        unitaryPrice: this.product.unitaryPrice,
-        description: this.product.description
-      });
+      name: this.product.name,
+      size: this.product.size,
+      unitaryPrice: this.product.unitaryPrice,
+      description: this.product.description
+    });
     const toast = await this.toastController.create({
-        header: this.product.name,
-        color: 'medium',
-        position: 'middle',
-        keyboardClose: true,
-        message: 'The product has been updated',
-        duration: 2000
-      });
+      header: this.product.name,
+      color: 'medium',
+      position: 'middle',
+      keyboardClose: true,
+      message: 'The product has been updated',
+      duration: 2000
+    });
     toast.present();
     this.router.navigate(['/inventory']);
   }
 
-  onDeleteProduct(){
+  onDeleteProduct() {
     this.inventoryService.deleteProduct(this.product.id);
     this.router.navigate(['/inventory']);
   }
 
-  addPresentation(){
-    this.presentations.push({
+  addPresentation() {
+    console.log(this.product.presentations);
+    this.product.presentations.push({
       name: 'nombre',
       cosa1: 'cosas',
-      cosa2: 'cosas'});
+      cosa2: 'cosas'
+    });
   }
 
 }
