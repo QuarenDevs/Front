@@ -1,0 +1,66 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Contnet of the page -->
+<ion-content>
+  <!-- Search for a single branch -->
+  <ion-searchbar
+    showCancelButton="always"
+    placeholder="Buscar Sucursal"
+    animated
+    (ionInput)="busquedaSucursal(this.$event.target.value)"
+  ></ion-searchbar>
+
+  <div *ngIf="!busqueda">
+    <!-- Card for every branch -->
+    <ion-card
+      *ngFor="let sucursal of sucursales"
+      button="true"
+      href="/lista-sucursales"
+      disabled="false"
+    >
+      <!-- Image of the branch -->
+      <img src="../../assets/image.jpg" style="height: 100px; width: 100%;" />
+      <ion-card-header>
+        <ion-card-subtitle>Sucursal</ion-card-subtitle>
+        <ion-card-title>{{ sucursal.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Dirección : {{ sucursal.direccion }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="busqueda">
+    <!-- Card for every branch -->
+    <ion-card
+      *ngFor="let sucursal of resultadoBusqueda"
+      button="true"
+      href="/lista-sucursales"
+      disabled="false"
+    >
+      <!-- Image of the branch -->
+      <img src="../../assets/image.jpg" style="height: 100px; width: 100%;" />
+      <ion-card-header>
+        <ion-card-subtitle>Sucursal</ion-card-subtitle>
+        <ion-card-title>{{ sucursal.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Dirección : {{ sucursal.direccion }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

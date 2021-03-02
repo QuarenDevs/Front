@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <header>
+    <ion-button
+      [routerLink]="['/home']"
+      shape="round"
+      fill="clear"
+      color="dark"
+    >
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </header>
+
+  <!-- Image -->
+  <img
+    src="../../assets/hombre.svg"
+    alt="Load the image of the entrepeneurship"
+  />
+  <!-- Buttons -->
+  <div class="buttons">
+    <ion-button expand="block">
+      <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      Regístrate con Facebook
+    </ion-button>
+    <ion-button expand="block"
+      ><ion-icon slot="start" name="logo-twitter"></ion-icon> Regístrate con
+      Twitter</ion-button
+    >
+    <ion-button expand="block"
+      ><ion-icon slot="start" name="logo-google"></ion-icon> Regístrate con
+      Google</ion-button
+    >
+    <ion-button expand="block" color="light"> Regístrate con Email</ion-button>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <a href="#">¿Ya tienes una cuenta?</a>
+    <p>
+      Al registrarte, aceptas los <a href="/">Términos de servicio</a> y la
+      <a href="/">Política de privacidad</a>
+    </p>
+  </footer>
+</ion-content>

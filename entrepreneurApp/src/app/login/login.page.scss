@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+img {
+  width: 40%;
+  margin: 10vh 30vw;
+}
+.buttons {
+  display: flex;
+  flex-flow: column wrap;
+  height: 30%;
+  justify-content: space-evenly;
+}
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  margin-top: 30px;
+}
+a {
+  text-decoration: none;
+}
+p {
+  width: 60%;
+  text-align: center;
+  font-size: 70%;
+}
